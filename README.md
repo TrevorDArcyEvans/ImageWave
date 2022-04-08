@@ -91,9 +91,17 @@ when the other image has been rotated.
 
 </details>
 
-| ImageMatch | ImageWave |
-|------------|-----------|
-| 46%        | 93%       |
+<details>
+  <summary>Baseline + rotated 90</summary>
+
+![](Images/open-clipart-120655-400x349-rot-90-resize.png)
+
+</details>
+
+| Image      | ImageMatch | ImageWave |
+|------------|------------|-----------|
+| rotated    | 46%        | 93%       |
+| rotated-90 | 28%        | 93%       |
 
 </details>
 

@@ -14,13 +14,7 @@ public sealed class ImageMatch
       throw new ArgumentOutOfRangeException($"Cannot compare coeffients with different sizes: {img1TopApproxCoeffs.Count} vs {img2TopApproxCoeffs.Count}");
     }
 
-    var sumDistSq = 0d;
-    for (var i = 0; i < img1TopApproxCoeffs.Count; i++)
-    {
-      var distSq = Math.Pow(img1TopApproxCoeffs[i] - img2TopApproxCoeffs[i], 2);
-      sumDistSq += distSq;
-    }
-
+    var sumDistSq = img1TopApproxCoeffs.Select((t, i) => Math.Pow(t - img2TopApproxCoeffs[i], 2)).Sum();
     var rmsDist = Math.Sqrt(sumDistSq / img1TopApproxCoeffs.Count);
     var match = (1d - rmsDist) * 100d;
 

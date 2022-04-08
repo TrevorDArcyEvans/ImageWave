@@ -26,7 +26,7 @@ namespace WaveletStudio.Wavelet
     public static class DWT
     {
         /// <summary>
-        /// Multilevel 1-D Discreete Wavelet Transform
+        /// Multilevel 1-D Discrete Wavelet Transform
         /// </summary>
         /// <param name="signal">The signal. Example: new Signal(5, 6, 7, 8, 1, 2, 3, 4)</param>
         /// <param name="motherWavelet">The mother wavelet to be used. Example: CommonMotherWavelets.GetWaveletFromName("DB4")</param>

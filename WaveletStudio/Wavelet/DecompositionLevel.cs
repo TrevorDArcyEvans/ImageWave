@@ -36,7 +36,7 @@ namespace WaveletStudio.Wavelet
         public double[] Approximation { get; set; }
 
         /// <summary>
-        /// Detais coefficients
+        /// Details coefficients
         /// </summary>
         public double[] Details { get; set; }
 
@@ -89,8 +89,8 @@ namespace WaveletStudio.Wavelet
         /// <summary>
         /// Estimates the disturbances in the signal based on the normal distribution of the details coefficients
         /// </summary>
-        /// <param name="threshold">The higher the threshold, the higher the tolerance in flutuations on energy of the details</param>
-        /// <param name="minimunDistance">Minimun distance between disturbances to consider a new one</param>
+        /// <param name="threshold">The higher the threshold, the higher the tolerance in fluctuations on energy of the details</param>
+        /// <param name="minimunDistance">Minimum distance between disturbances to consider a new one</param>
         /// <returns></returns>
         public List<Disturbance> GetDisturbances(double threshold = 0.1, int minimunDistance = 3)
         {

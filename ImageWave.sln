@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveletStudio", "WaveletStudio\WaveletStudio.csproj", "{F9DF5320-A72A-4EEF-AC39-E8EFF2A6C2AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWave.UI.CLI", "ImageWave.UI.CLI\ImageWave.UI.CLI.csproj", "{5E3029E6-1CF2-42BB-82A8-203853E039EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageWave.Core", "ImageWave.Core\ImageWave.Core.csproj", "{56AA7D58-A42D-48CF-AB7E-5DB763190C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveletStudio.Tests", "WaveletStudio.Tests\WaveletStudio.Tests.csproj", "{38C72D46-BA9F-4340-95C6-8D8B614255AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9DF5320-A72A-4EEF-AC39-E8EFF2A6C2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9DF5320-A72A-4EEF-AC39-E8EFF2A6C2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9DF5320-A72A-4EEF-AC39-E8EFF2A6C2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9DF5320-A72A-4EEF-AC39-E8EFF2A6C2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3029E6-1CF2-42BB-82A8-203853E039EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3029E6-1CF2-42BB-82A8-203853E039EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3029E6-1CF2-42BB-82A8-203853E039EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3029E6-1CF2-42BB-82A8-203853E039EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56AA7D58-A42D-48CF-AB7E-5DB763190C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AA7D58-A42D-48CF-AB7E-5DB763190C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AA7D58-A42D-48CF-AB7E-5DB763190C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AA7D58-A42D-48CF-AB7E-5DB763190C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C72D46-BA9F-4340-95C6-8D8B614255AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C72D46-BA9F-4340-95C6-8D8B614255AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C72D46-BA9F-4340-95C6-8D8B614255AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C72D46-BA9F-4340-95C6-8D8B614255AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

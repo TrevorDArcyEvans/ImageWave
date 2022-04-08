@@ -10,7 +10,7 @@ internal sealed class ImageDecomposition
 {
   public static List<DecompositionLevel> Decompose(Image<Rgba32> img, int hashSideSize = 256)
   {
-    // resize img to 16x16px (by default) or with configured size 
+    // resize img to 256x256px (by default) or with configured size 
     img.Mutate(ctx => ctx
       .Resize(new Size(hashSideSize, hashSideSize))
       .BlackWhite());

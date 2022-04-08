@@ -21,11 +21,34 @@ internal sealed class ImageDecomposition
       for (var y = 0; y < acc.Height; y++)
       {
         var pxRow = acc.GetRowSpan(y);
-        for (var x = 0; x < pxRow.Length - 1; x++)
+        
+        // implement 'winding' to marginally improve pathologically rotated cases
+        //
+        //    1111    vs    1100
+        //    1111          1100
+        //    0000          1100
+        //    0000          1100
+        //
+        // input signal:
+        //
+        //    1111111100000000 vs 1100001111000011
+        if (y % 2 == 0)
         {
-          ref var px = ref pxRow[x];
-          var isWhite = (px.R + px.G + px.B) > 45;
-          input.Add(isWhite ? 1d : 0d);
+          for (var x = pxRow.Length - 1; x >= 0; x--)
+          {
+            ref var px = ref pxRow[x];
+            var isWhite = (px.R + px.G + px.B) > 45;
+            input.Add(isWhite ? 1d : 0d);
+          }
+        }
+        else
+        {
+          for (var x = 0; x < pxRow.Length - 1; x++)
+          {
+            ref var px = ref pxRow[x];
+            var isWhite = (px.R + px.G + px.B) > 45;
+            input.Add(isWhite ? 1d : 0d);
+          }
         }
       }
     });

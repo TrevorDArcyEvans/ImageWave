@@ -6,7 +6,7 @@ using SixLabors.ImageSharp.Processing;
 using WaveletStudio;
 using WaveletStudio.Wavelet;
 
-public sealed class ImageDecomposition
+internal sealed class ImageDecomposition
 {
   public static List<DecompositionLevel> Decompose(Image<Rgba32> img, int hashSideSize = 32)
   {

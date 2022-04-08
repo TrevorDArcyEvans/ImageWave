@@ -9,11 +9,55 @@ A less simple method to match images
 # Discussion
 
 <details>
+There are several reference images:
+
+<details>
+  <summary>Baseline</summary>
+
+![](Images/open-clipart-270289.png)
+
+</details>
+
+<details>
+  <summary>Baseline + brightness & contrast changed</summary>
+
+![](Images/open-clipart-270289-bright.png)
+
+</details>
+
+<details>
+  <summary>Baseline + resized 80%</summary>
+
+![](Images/open-clipart-270289-resize.png)
+
+</details>
+
+<details>
+  <summary>Baseline + rotated slightly</summary>
+
+![](Images/open-clipart-270289-rot.png)
+
+</details>
+
+<details>
+  <summary>Baseline + rotated more</summary>
+
+![](Images/open-clipart-270289-rot-more.png)
+
+</details>
+
+| Image                 | Match |
+|-----------------------|-------|
+| brightness & contrast | 73%   |
+| resized               | 79%   |
+| rotated slightly      | 72%   |
+| rotated more          | 51%   |
 
 </details>
 
 # Further information
 * [Algorithm to compare two images](https://stackoverflow.com/questions/23931/algorithm-to-compare-two-images)
+* [Discrete Wavelet Transform](https://en.wikipedia.org/wiki/Discrete_wavelet_transform)
 
 # Acknowledgements
 * [WaveletStudio](https://github.com/DragonLi/waveletstudio)

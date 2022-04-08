@@ -1,10 +1,9 @@
-﻿using WaveletStudio;
-
-namespace ImageWave.Core;
+﻿namespace ImageWave.Core;
 
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
+using WaveletStudio;
 using WaveletStudio.Wavelet;
 
 public sealed class ImageDecomposition

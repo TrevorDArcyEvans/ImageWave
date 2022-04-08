@@ -105,6 +105,54 @@ when the other image has been rotated.
 
 </details>
 
+## Winding
+
+<details>
+
+Normally, pixel data is read in row by row.  Once the end of the row is reached, we then
+go to the start of the next row and start at the beginning.
+
+![](Images/signal-base-normal.png)
+
+In pathalogically rotated cases eg rotated 90 degrees, the input signal to the DWT will contain a
+sharp step.  This results in many higher frequency components which can degrade image matching.
+
+![](Images/signal-90-normal.png)
+
+To lessen the effects, 'winding' of the input signal was implemented.  At the end of each row
+of the image, instead of going back to the **start** of the next row, pixels are read from the
+**end** of the next row **backwards** to the start of the next row.
+
+![](Images/signal-base-winding.png)
+
+![](Images/signal-90-winding.png)
+
+### Results
+
+<details>
+
+<details>
+  <summary>Baseline</summary>
+
+![](Images/block.png)
+
+</details>
+
+<details>
+  <summary>Baseline + rotated</summary>
+
+![](Images/block-90.png)
+
+</details>
+
+Comparison:
+* before winding = 93.5%
+* after  winding = 95.6%
+
+</details>
+
+</details>
+
 # Further work
 * experiment with different mother wavelets
   * current uses [Haar wavelet](https://en.wikipedia.org/wiki/Haar_wavelet)

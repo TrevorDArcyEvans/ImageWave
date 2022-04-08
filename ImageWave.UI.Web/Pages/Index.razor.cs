@@ -76,7 +76,7 @@ public sealed partial class Index
     await Task.Run(() =>
     {
       var match = ImageMatch.Match(_img1, _img2);
-      _text = $"Match = {match}%";
+      _text = $"Match = {match:F1}%";
     });
   }
 }

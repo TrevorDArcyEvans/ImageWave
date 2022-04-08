@@ -21,7 +21,7 @@ internal static class Program
     var match = ImageMatch.Match(img1, img2);
     Console.WriteLine($"ImageFile1 = {opt.ImageFile1Path}");
     Console.WriteLine($"ImageFile2 = {opt.ImageFile2Path}");
-    Console.WriteLine($"  Match = {match}%");
+    Console.WriteLine($"  Match = {match:F1}%");
   }
 
   private static Task HandleParseError(IEnumerable<Error> errs)

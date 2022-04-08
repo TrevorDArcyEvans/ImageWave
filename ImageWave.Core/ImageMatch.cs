@@ -7,8 +7,8 @@ public sealed class ImageMatch
 {
   public static double Match(Image<Rgba32> img1, Image<Rgba32> img2, int hashSideSize = 256)
   {
-    var img1TopApproxCoeffs = GetTopApproxCoeffs(img1, hashSideSize);
-    var img2TopApproxCoeffs = GetTopApproxCoeffs(img2, hashSideSize);
+    var img1TopApproxCoeffs = GetDetailsCoeffs(img1, hashSideSize);
+    var img2TopApproxCoeffs = GetDetailsCoeffs(img2, hashSideSize);
     if (img1TopApproxCoeffs.Count != img2TopApproxCoeffs.Count)
     {
       throw new ArgumentOutOfRangeException($"Cannot compare coeffients with different sizes: {img1TopApproxCoeffs.Count} vs {img2TopApproxCoeffs.Count}");
@@ -27,10 +27,10 @@ public sealed class ImageMatch
     return match < 0 ? 0 : match;
   }
 
-  private static List<double> GetTopApproxCoeffs(Image<Rgba32> img, int hashSideSize = 256)
+  private static List<double> GetDetailsCoeffs(Image<Rgba32> img, int hashSideSize = 256)
   {
     var imgDecomp = ImageDecomposition.Decompose(img, hashSideSize);
-    var imgApprox = imgDecomp.Single().Approximation;
+    var imgApprox = imgDecomp.Single().Details;
     return imgApprox.ToList();
   }
 }

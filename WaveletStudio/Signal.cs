@@ -231,7 +231,10 @@ namespace WaveletStudio
             var str = new StringBuilder();
             foreach (var t in Samples)
             {
-                str.Append(string.Format(System.Globalization.CultureInfo.InvariantCulture, format, t));
+                // explicitly force small negative numbers to zero otherwise they are rendered with leading sign
+                var newt = Math.Abs(t) < 1e-13 ? 0 : t;
+                var numStr = string.Format(System.Globalization.CultureInfo.InvariantCulture, format, newt);
+                str.Append(numStr);
             }
             return str.ToString().TrimEnd(separator.ToCharArray());
         }

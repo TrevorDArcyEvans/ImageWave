@@ -181,7 +181,8 @@ Comparison:
 * experiment with DWT depth level
   * currently set to 1
 * RMS of details is currently not weighted
-* fix _WaveletStudio_ unit tests
+* ~~fix _WaveletStudio_ unit tests~~
+* investigate regression in _DecompositionLevel_
 
 # Further information
 

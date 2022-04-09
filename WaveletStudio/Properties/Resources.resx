@@ -694,4 +694,7 @@ Click in the Signal tab and select a signal source.</value>
   <data name="RescaleDescription" xml:space="preserve">
     <value>Rescale outputs in the "ALL" output to the original signal size, reverting the downsample and extension effects. Warning: the "ALL" output will be modified, and the signal in this output cannot be reconstructed. Default value is false.</value>
   </data>
+  <data name="FunctionTextDescription" xml:space="preserve">
+    <value>Text of thefunction.</value>
+  </data>
 </root>

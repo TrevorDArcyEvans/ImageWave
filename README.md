@@ -11,6 +11,28 @@ A less simple method to match images
 * commandline client
 * less worse than other [algorithms](https://github.com/TrevorDArcyEvans/ImageMatch)
 
+# Getting started
+
+<details>
+
+```bash
+git clone https://github.com/TrevorDArcyEvans/ImageWave.git
+cd ImageWave/
+dotnet restore
+dotnet build
+```
+
+## Web UI
+```bash
+cd cd ImageWave.UI.Web/
+dotnet restore
+dotnet build
+dotnet run
+```
+open [ImageWave](http://localhost:5010)
+
+</details>
+
 # Discussion
 This algorithm uses a discrete wavelet transform (DWT) to calculate the root mean square (RMS)
 distance between the details of two images.

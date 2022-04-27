@@ -11,6 +11,9 @@ A less simple method to match images
 * commandline client
 * less worse than other [algorithms](https://github.com/TrevorDArcyEvans/ImageMatch)
 
+# Demo
+[ImageWave](https://trevordarcyevans.github.io/ImageWave/)
+
 # Getting started
 
 <details>

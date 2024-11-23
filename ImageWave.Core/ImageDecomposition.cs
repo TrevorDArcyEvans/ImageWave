@@ -37,7 +37,7 @@ internal sealed class ImageDecomposition
           for (var x = pxRow.Length - 1; x >= 0; x--)
           {
             ref var px = ref pxRow[x];
-            var isWhite = (px.R + px.G + px.B) > 45;
+            var isWhite = IsWhite(ref px);
             input.Add(isWhite ? 1d : 0d);
           }
         }
@@ -46,7 +46,7 @@ internal sealed class ImageDecomposition
           for (var x = 0; x < pxRow.Length - 1; x++)
           {
             ref var px = ref pxRow[x];
-            var isWhite = (px.R + px.G + px.B) > 45;
+            var isWhite = IsWhite(ref px);
             input.Add(isWhite ? 1d : 0d);
           }
         }
@@ -57,5 +57,16 @@ internal sealed class ImageDecomposition
     var decomp = DWT.ExecuteDWT(signal, wavelet, 1);
 
     return decomp;
+  }
+
+  private static bool IsWhite(ref Rgba32 px)
+  {
+    return ToGrayscale(px) > 45;
+  }
+
+  private static double ToGrayscale(Rgba32 px)
+  {
+    // standard RGB --> grayscale conversion
+    return (0.299 * px.R + 0.587 * px.G + 0.114 * px.B);
   }
 }

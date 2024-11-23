@@ -5,7 +5,7 @@ using SixLabors.ImageSharp.PixelFormats;
 
 public sealed class ImageMatch
 {
-  public static double Match(Image<Rgba32> img1, Image<Rgba32> img2, int hashSideSize = 256)
+  public static double Match(Image<Rgba32> img1, Image<Rgba32> img2, int hashSideSize = 64)
   {
     var img1TopApproxCoeffs = GetDetailsCoeffs(img1, hashSideSize);
     var img2TopApproxCoeffs = GetDetailsCoeffs(img2, hashSideSize);

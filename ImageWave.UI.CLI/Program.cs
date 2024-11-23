@@ -18,7 +18,7 @@ internal static class Program
   {
     var img1 = await Image.LoadAsync<Rgba32>(opt.ImageFile1Path);
     var img2 = await Image.LoadAsync<Rgba32>(opt.ImageFile2Path);
-    var match = ImageMatch.Match(img1, img2);
+    var match = ImageMatch.Match(img1, img2, opt.HashSize);
     Console.WriteLine($"ImageFile1 = {opt.ImageFile1Path}");
     Console.WriteLine($"ImageFile2 = {opt.ImageFile2Path}");
     Console.WriteLine($"  Match = {match:F1}%");

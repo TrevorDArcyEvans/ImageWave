@@ -6,22 +6,24 @@ using SixLabors.ImageSharp.Processing;
 using WaveletStudio;
 using WaveletStudio.Wavelet;
 
-internal sealed class ImageDecomposition
+internal static class ImageDecomposition
 {
   public static List<DecompositionLevel> Decompose(Image<Rgba32> img, int hashSideSize = 256)
   {
     // resize img to 256x256px (by default) or with configured size 
+    // binary threshold of 0.33 is empirically determined
     img.Mutate(ctx => ctx
       .Resize(new Size(hashSideSize, hashSideSize))
-      .BlackWhite());
+      .BinaryThreshold(0.33f));
 
     var input = new List<double>();
+
     img.ProcessPixelRows(acc =>
     {
       for (var y = 0; y < acc.Height; y++)
       {
         var pxRow = acc.GetRowSpan(y);
-        
+
         // implement 'winding' to marginally improve pathologically rotated cases
         //
         //    1111    vs    1100
@@ -36,18 +38,14 @@ internal sealed class ImageDecomposition
         {
           for (var x = pxRow.Length - 1; x >= 0; x--)
           {
-            ref var px = ref pxRow[x];
-            var isWhite = IsWhite(ref px);
-            input.Add(isWhite ? 1d : 0d);
+            ProcessPixel(pxRow, x);
           }
         }
         else
         {
           for (var x = 0; x < pxRow.Length - 1; x++)
           {
-            ref var px = ref pxRow[x];
-            var isWhite = IsWhite(ref px);
-            input.Add(isWhite ? 1d : 0d);
+            ProcessPixel(pxRow, x);
           }
         }
       }
@@ -57,16 +55,11 @@ internal sealed class ImageDecomposition
     var decomp = DWT.ExecuteDWT(signal, wavelet, 1);
 
     return decomp;
-  }
 
-  private static bool IsWhite(ref Rgba32 px)
-  {
-    return ToGrayscale(px) > 45;
-  }
-
-  private static double ToGrayscale(Rgba32 px)
-  {
-    // standard RGB --> grayscale conversion
-    return (0.299 * px.R + 0.587 * px.G + 0.114 * px.B);
+    void ProcessPixel(Span<Rgba32> span, int i)
+    {
+      ref var px = ref span[i];
+      input.Add(px.R == 255 ? 1d : 0d);
+    }
   }
 }
